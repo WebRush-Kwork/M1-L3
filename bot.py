@@ -15,7 +15,6 @@ def ban_user(message):
         chat_id = message.chat.id
         user_id = message.reply_to_message.from_user.id
         user_status = bot.get_chat_member(chat_id, user_id).status
-        # проверка пользователя
         if user_status == 'administrator' or user_status == 'creator':
             bot.reply_to(message, "Невозможно забанить администратора 👨‍💻")
         else:
