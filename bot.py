@@ -9,6 +9,12 @@ def start(message):
     bot.reply_to(message, 'Привет! Я бот для управления чатом 😌')
 
 
+@bot.message_handler(commands=['info'])
+def info(message):
+    bot.send_message(
+        message, 'Итак, я бот для бана нехороших пользователей!\nИспользуй мой весь мой функционал путем нажатия на кнопку с командами около кнопки прикрепить! 💻')
+
+
 @bot.message_handler(commands=['ban'])
 def ban_user(message):
     if message.reply_to_message:
